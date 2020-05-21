@@ -1,0 +1,21 @@
+<div>
+  <div class="row">
+    <div class="col-md-6">
+      <input type="number" [(ngModel)]="source.latitude"/>
+    </div>
+    <div class="col-md-6">
+        <input type="number" [(ngModel)]="source.longitude"/>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="onSourceChange()">Change source</button>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+        <input type="number" [(ngModel)]="destination.latitude"/>
+    </div>
+    <div class="col-md-6">
+        <input type="number" [(ngModel)]="destination.longitude"/>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="onDestinationChange()">Change destination</button>
+  </div>
+</div>
