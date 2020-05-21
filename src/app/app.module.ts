@@ -6,8 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AgmCoreModule } from '@agm/core';
 import { AgmDirectionModule } from 'agm-direction';
-import { MapMainComponent } from './map-main/map-main.component';
-import { UserFormComponent } from './user-form/user-form.component';
+import { MapMainComponent } from './components/map-main/map-main.component';
+import { UserFormComponent } from './components/user-form/user-form.component';
 import { DataService } from './services/data.service';
 
 @NgModule({
