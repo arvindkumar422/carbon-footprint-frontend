@@ -1,21 +1,49 @@
 <div>
   <div class="row">
     <div class="col-md-6">
-      <input type="number" [(ngModel)]="source.latitude"/>
+      <input type="number" [(ngModel)]="source.latitude" />
     </div>
     <div class="col-md-6">
-        <input type="number" [(ngModel)]="source.longitude"/>
+      <input type="number" [(ngModel)]="source.longitude" />
     </div>
     <button type="button" class="btn btn-primary" (click)="onSourceChange()">Change source</button>
   </div>
   <hr>
   <div class="row">
     <div class="col-md-6">
-        <input type="number" [(ngModel)]="destination.latitude"/>
+      <input type="number" [(ngModel)]="destination.latitude" />
     </div>
     <div class="col-md-6">
-        <input type="number" [(ngModel)]="destination.longitude"/>
+      <input type="number" [(ngModel)]="destination.longitude" />
     </div>
     <button type="button" class="btn btn-primary" (click)="onDestinationChange()">Change destination</button>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <label>Enter Source address</label>
+      <input [(ngModel)]="srcAddress" class="form-control mr-sm-4" type="text" id="srcaddress" placeholder="Search for the Location"
+        autocorrect="off" autocapitalize="off" spellcheck="off" class="form-control" #searchSrc />
+    </div>
+    <div class="col-sm-10">
+      <button type="button" class="btn btn-danger" (click)="searchSrcAddress()">Search address</button>
+    </div>
+    <div class="col-sm-2">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-12">
+      <label>Enter Destination address</label>
+      <input [(ngModel)]="destAddress" class="form-control mr-sm-4" type="text" id="destaddress" placeholder="Search for the Location"
+        autocorrect="off" autocapitalize="off" spellcheck="off" class="form-control" #searchDest />
+    </div>
+    <div class="col-sm-10">
+      <button type="button" class="btn btn-danger" (click)="searchDestAddress()">Search destination</button>
+    </div>
+    <div class="col-sm-2">
+    </div>
   </div>
 </div>

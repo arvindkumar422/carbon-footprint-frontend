@@ -25,16 +25,12 @@ export class MapMainComponent implements OnInit {
     this.getDirection();
     this.dataService.source.subscribe(
       (source: Location) => {
-        console.log("Source changed to : ", source);
-        this.origin = source;
-        this.getDirection();
+        this.origin = {lat: source.latitude, lng: source.longitude};
       }
     );
     this.dataService.destination.subscribe(
       (destination: Location) => {
-        console.log("Dest changed to : ", destination);
-        this.destination = destination;
-        this.getDirection();
+        this.destination = {lat: destination.latitude, lng: destination.longitude};
       }
     );
   }
