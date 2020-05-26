@@ -4,6 +4,7 @@ import { Location } from '../../models/location/location.model';
 import { FormControl } from '@angular/forms';
 import { MapsAPILoader } from '@agm/core';
 import { GeocodeService } from '../services/geocode.service';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-user-form',
@@ -17,11 +18,15 @@ export class UserFormComponent implements OnInit {
 
   srcAddress: string;
   destAddress: string;
+  modeString: string = 'walking';
+
+  distance: string = "0 km";
 
   constructor(private dataService: DataService,
     private geocodeService: GeocodeService,
     private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone) {
+    private ngZone: NgZone,
+    private httpService: HttpService) {
     this.source = dataService.getSource();
     this.destination = dataService.getDestination();
   }
@@ -63,6 +68,15 @@ export class UserFormComponent implements OnInit {
           this.destination.longitude = result.longitude;
           this.onDestinationChange();
         }
+      }
+    );
+  }
+
+  computeCF() {
+    
+    this.httpService.computeDistance(this.source, this.destination, this.modeString).subscribe(
+      (res:any) => {
+        this.distance = res.distance;
       }
     );
   }

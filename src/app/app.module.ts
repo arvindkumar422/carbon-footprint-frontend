@@ -10,6 +10,8 @@ import { MapMainComponent } from './components/map-main/map-main.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { DataService } from './services/data.service';
 
+import {HttpClientModule} from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +20,7 @@ import { DataService } from './services/data.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AgmCoreModule.forRoot({ // @agm/core
       apiKey: 'AIzaSyCNcA5GQHiQ9BU7ATE_KmcqU78TUrMSrtM',
       libraries: ['places'] 

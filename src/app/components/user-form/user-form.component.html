@@ -1,5 +1,5 @@
 <div>
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-md-6">
       <input type="number" [(ngModel)]="source.latitude" />
     </div>
@@ -19,7 +19,7 @@
     <button type="button" class="btn btn-primary" (click)="onDestinationChange()">Change destination</button>
   </div>
 
-  <hr>
+  <hr> -->
 
   <div class="row">
     <div class="col-sm-12">
@@ -30,7 +30,11 @@
     <div class="col-sm-10">
       <button type="button" class="btn btn-danger" (click)="searchSrcAddress()">Search address</button>
     </div>
-    <div class="col-sm-2">
+    <div class="col-md-5">
+      <input [disabled]="true" type="number" [(ngModel)]="source.latitude" />
+    </div>
+    <div class="col-md-5">
+      <input [disabled]="true" type="number" [(ngModel)]="source.longitude" />
     </div>
   </div>
   <br>
@@ -43,7 +47,31 @@
     <div class="col-sm-10">
       <button type="button" class="btn btn-danger" (click)="searchDestAddress()">Search destination</button>
     </div>
-    <div class="col-sm-2">
+    <div class="col-md-5">
+      <input [disabled]="true" type="number" [(ngModel)]="destination.latitude" />
+    </div>
+    <div class="col-md-5">
+      <input [disabled]="true" type="number" [(ngModel)]="destination.longitude" />
     </div>
   </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-12">
+      <label for="mode">Mode</label>
+      <select id="mode" [(ngModel)]="modeString">
+        <option value="walking">Walk</option>
+        <option value="driving">Drive</option>
+        <option value="bicycling">Cycling</option>
+        <option value="transit">Transit</option>
+      </select>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-sm-12">
+      <button type="button" class="btn btn-primary" (click)="computeCF()">Compute Distance</button>
+    </div>
+  </div>
+  <hr>
+  <input type="text" [disabled]="true" [(ngModel)]="distance" />
 </div>
