@@ -20,7 +20,7 @@ export class UserFormComponent implements OnInit {
   srcAddress: string;
   destAddress: string;
   modeString: string = 'walking';
-  vehicleString: string = 'Car';
+  vehicleString: string;
   distance: string = "0 km";
   emissions: string = "0 g";
   vehicleList: Array<string> = undefined;
