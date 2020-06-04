@@ -69,9 +69,25 @@
   <hr>
   <div class="row">
     <div class="col-sm-12">
-      <button type="button" class="btn btn-primary" (click)="computeCF()">Compute Distance</button>
+      <button type="button" class="btn btn-primary" (click)="getVehicles()">Select Mode</button>
     </div>
   </div>
   <hr>
-  <input type="text" [disabled]="true" [(ngModel)]="distance" />
+  <div class="row" *ngIf="vehicleList">
+    <div class="col-sm-12">
+      <label for="vehicle">Vehicle</label>
+      <select id="vehicle" [(ngModel)]="vehicleString">
+        <option *ngFor="let vehicle of vehicleList" value={{vehicle}}>{{vehicle}}</option>
+      </select>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-sm-12">
+      <button type="button" class="btn btn-primary" (click)="computeCF()">Compute Emissions</button>
+    </div>
+  </div>
+  <hr>
+  <h4>Distance travelled : </h4> <input type="text" [disabled]="true" [(ngModel)]="distance" />
+  <h5>Carbon emissions in grams : </h5><input type="text" [disabled]="true" [(ngModel)]="emissions" />
 </div>

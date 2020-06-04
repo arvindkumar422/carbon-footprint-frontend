@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
+import { CommonModule } from '@angular/common'; 
 import { DataService } from '../../services/data.service';
 import { Location } from '../../models/location/location.model';
 import { FormControl } from '@angular/forms';
@@ -19,8 +20,10 @@ export class UserFormComponent implements OnInit {
   srcAddress: string;
   destAddress: string;
   modeString: string = 'walking';
-
+  vehicleString: string;
   distance: string = "0 km";
+  emissions: string = "0 g";
+  vehicleList: Array<string> = undefined;
 
   constructor(private dataService: DataService,
     private geocodeService: GeocodeService,
@@ -74,13 +77,22 @@ export class UserFormComponent implements OnInit {
 
   computeCF() {
     
-    this.httpService.computeDistance(this.source, this.destination, this.modeString).subscribe(
+    this.httpService.computeDistance(this.source, this.destination, this.modeString, this.vehicleString).subscribe(
       (res:any) => {
         this.distance = res.distance;
+        this.emissions = res.emissions;
       }
     );
   }
 
-
-
+  getVehicles(){
+    switch(this.modeString){
+      case 'driving':  this.vehicleList =  ["car (diesel)","car (petrol)", "car (electric)", "motorcycle","lorry"];
+      break;
+      case 'transit':  this.vehicleList = ["bus", "train"];
+      break;
+      default: this.vehicleList = undefined;
+      break;
+  }
+}
 }
