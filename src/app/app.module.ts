@@ -11,12 +11,16 @@ import { UserFormComponent } from './components/user-form/user-form.component';
 import { DataService } from './services/data.service';
 
 import {HttpClientModule} from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+import { SocialComponent } from './components/social/social.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapMainComponent,
-    UserFormComponent
+    UserFormComponent,
+    HomeComponent,
+    SocialComponent
   ],
   imports: [
     BrowserModule,

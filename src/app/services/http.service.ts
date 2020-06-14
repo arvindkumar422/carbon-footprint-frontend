@@ -17,4 +17,9 @@ export class HttpService {
     return this.httpClient.post('http://localhost:3000/getDistance',
       { "origins": [originString], "destinations": [destString], "mode": mode, "vehicle": vehicle });
   }
+
+  getTweets() {
+    return this.httpClient.get('http://localhost:3000/getTweets');
+  }
+
 }
