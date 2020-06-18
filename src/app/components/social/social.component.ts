@@ -27,13 +27,17 @@ export class SocialComponent implements OnInit {
           element => !this.ids.includes(element._id)
         ).forEach(
           item => {
-            const temp = new Tweet(item._id, item._source.text, new TweetUser(item._source.user.id, item._source.user.name, item._source.user.profile_image_url_https));
+            const temp = new Tweet(item._id, item._source.text, new TweetUser(item._source.user.id, item._source.user.name, item._source.user.profile_image_url_https, item._source.user.screen_name));
             this.ids.push(item._id);
             this.tweets.unshift(temp);
           }
         );
       }
     );
+  }
+
+  routeToTweet(tweet_id, tweetuser_id) {
+    return "http://twitter.com/" + tweetuser_id + "/status/" + tweet_id;
   }
 
 }

@@ -13,6 +13,7 @@ import { DataService } from './services/data.service';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { SocialComponent } from './components/social/social.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SocialComponent } from './components/social/social.component';
     MapMainComponent,
     UserFormComponent,
     HomeComponent,
-    SocialComponent
+    SocialComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

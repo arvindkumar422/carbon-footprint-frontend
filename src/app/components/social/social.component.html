@@ -1,10 +1,23 @@
-<div *ngFor="let tweet of tweets">
-  <div class="row">
-    <div class="col-md-2">
-      {{ tweet.user.name }}
-    </div>
-    <div class="col-md-10">
-      {{ tweet.text }}
+<div class="row">
+  <div class="col-md-5">
+
+  </div>
+  <div class="col-md-7 tweet-section">
+    <div *ngFor="let tweet of tweets" class="tweet">
+      <a [attr.href]="routeToTweet(tweet.id, tweet.user.id)" class="linkTweet">
+        <div class="row">
+          <div class="col-md-2" class="tweet-name">
+            <img [src]="tweet.user.dp">
+          </div>
+          <div class="col-md-10">
+            <a [attr.href]="tweet.user.screen_name">{{ tweet.user.name }}</a>
+            : {{ tweet.text }}
+          </div>
+        </div>
+      </a>
+  
     </div>
   </div>
+  
+
 </div>

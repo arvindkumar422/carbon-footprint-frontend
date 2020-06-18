@@ -1,0 +1,28 @@
+.tweet {
+    max-width: 750px;
+    padding: 3vh;
+    background: #cdbae1;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    font-family: cursive;
+    border-radius: 3vh;
+    height: 10vh;
+    cursor: pointer;
+}
+
+.tweet-name {
+    overflow: hidden;
+}
+
+.linkTweet {
+    color: #20285c;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.tweet-section {
+    max-height: 89vh;
+    overflow-y: scroll;
+}
