@@ -15,6 +15,8 @@ import { HomeComponent } from './components/home/home.component';
 import { SocialComponent } from './components/social/social.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     }),
     AgmDirectionModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule.forRoot()
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
