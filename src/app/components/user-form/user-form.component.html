@@ -1,32 +1,10 @@
 <div>
-  <!-- <div class="row">
-    <div class="col-md-6">
-      <input type="number" [(ngModel)]="source.latitude" />
-    </div>
-    <div class="col-md-6">
-      <input type="number" [(ngModel)]="source.longitude" />
-    </div>
-    <button type="button" class="btn btn-primary" (click)="onSourceChange()">Change source</button>
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-md-6">
-      <input type="number" [(ngModel)]="destination.latitude" />
-    </div>
-    <div class="col-md-6">
-      <input type="number" [(ngModel)]="destination.longitude" />
-    </div>
-    <button type="button" class="btn btn-primary" (click)="onDestinationChange()">Change destination</button>
-  </div>
-
-  <hr> -->
 
   <div class="row">
     <div class="col-sm-12">
-      <label>Enter Source address</label>
-      <!-- <input [(ngModel)]="srcAddress" class="form-control mr-sm-4" type="text" id="srcaddress"
-        placeholder="Search for the Location" autocorrect="off" autocapitalize="off" spellcheck="off"
-        class="form-control" #searchSrc /> -->
+      <label>
+        <h5>Enter Source address</h5>
+      </label>
       <div class="input-group">
         <input [(ngModel)]="srcAddress" class="form-control width100" type="text" id="srcaddress"
           placeholder="Search for the Location" autocorrect="off" autocapitalize="off" spellcheck="off" #searchSrc />
@@ -36,15 +14,6 @@
       </div>
     </div>
 
-    <!-- <div class="col-sm-10">
-      <button type="button" class="btn btn-danger" (click)="searchSrcAddress()">Search address</button>
-    </div> -->
-    <!-- <div class="col-md-5">
-      <input [disabled]="true" type="number" [(ngModel)]="source.latitude" />
-    </div>
-    <div class="col-md-5">
-      <input [disabled]="true" type="number" [(ngModel)]="source.longitude" />
-    </div> -->
   </div>
   <br>
   <div class="row">
@@ -52,9 +21,6 @@
       <label>
         <h5>Enter Destination address</h5>
       </label>
-      <!-- <input [(ngModel)]="destAddress" class="form-control mr-sm-4" type="text" id="destaddress"
-        placeholder="Search for the Location" autocorrect="off" autocapitalize="off" spellcheck="off"
-        class="form-control" #searchDest /> -->
       <div class="input-group">
         <input [(ngModel)]="destAddress" class="form-control width100" type="text" id="srcaddress"
           placeholder="Search for the Location" autocorrect="off" autocapitalize="off" spellcheck="off" #searchDest />
@@ -63,41 +29,10 @@
         </span>
       </div>
     </div>
-    <!-- <div class="col-sm-10">
-      <button type="button" class="btn btn-danger" (click)="searchDestAddress()">Search destination</button>
-    </div>
-    <div class="col-md-5">
-      <input [disabled]="true" type="number" [(ngModel)]="destination.latitude" />
-    </div>
-    <div class="col-md-5">
-      <input [disabled]="true" type="number" [(ngModel)]="destination.longitude" />
-    </div> -->
   </div>
-  <!-- <br>
-  <div class="row">
-    <div class="col-md-12">
-      <div ngbDropdown class="d-inline-block">
-        <button class="btn btn-outline-warning" id="dropdownBasic1" ngbDropdownToggle>Select mode</button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem (click)="onModeChange($event)">Walk</button>
-          <button ngbDropdownItem>Drive</button>
-          <button ngbDropdownItem>Cycling</button>
-          <button ngbDropdownItem>Transit</button>
-        </div>
-
-      </div>
-      <label for="mode">Mode</label>
-      <select id="mode" [(ngModel)]="modeString" (change)="modeChange()">
-        <option value="walking">Walk</option>
-        <option value="driving">Drive</option>
-        <option value="bicycling">Cycling</option>
-        <option value="transit">Transit</option>
-      </select>
-    </div>
-  </div> -->
+ 
   <hr>
   <div class="btn-group row">
-    <!-- <label>Mode</label> -->
     <div id="mode" class="btn-group col-md-6" ngbDropdown role="group" aria-label="Button group for mode">
       <button class="btn btn-outline-warning" ngbDropdownToggle>{{modeString}}</button>
       <div class="dropdown-menu" ngbDropdownMenu>
@@ -105,6 +40,7 @@
         <button ngbDropdownItem value="driving" (click)="onModeChange($event)">Drive</button>
         <button ngbDropdownItem value="bicycling" (click)="onModeChange($event)">Bicycle</button>
         <button ngbDropdownItem value="transit" (click)="onModeChange($event)">Transit</button>
+        <button ngbDropdownItem value="flight" (click)="onModeChange($event)">Flight</button>
       </div>
     </div>
     <div *ngIf="modeString === 'driving'" class="btn-group col-md-6" ngbDropdown role="group"
@@ -127,31 +63,19 @@
         </button>
       </div>
     </div>
+
+    <div *ngIf="modeString === 'flight'" class="btn-group col-md-6" ngbDropdown role="group"
+    aria-label="Button group with nested dropdown">
+    <button class="btn btn-outline-success" ngbDropdownToggle>{{seatTypeString}}</button>
+    <div class="dropdown-menu" ngbDropdownMenu>
+      <button ngbDropdownItem *ngFor="let seatType of seatTypes; let i = index" [value]="seatType"
+        (click)="seatTypeString=seatType">
+        <h6>{{seatType}}</h6>
+      </button>
+    </div>
+  </div>
   </div>
   <hr>
-  <!-- <div class="row">
-    <div class="col-sm-12">
-      <button type="button" class="btn btn-primary" (click)="getVehicles()">Select Mode</button>
-    </div>
-  </div>
-  <hr> -->
-  <!-- <div class="row" *ngIf="modeString === 'driving'">
-    <div class="col-sm-12">
-      <label for="vehicleDrive">Vehicle</label>
-      <select id="vehicleDrive" [(ngModel)]="vehicleString">
-        <option *ngFor="let vehicle of drivingList; let i = index" [value]="vehicle">{{vehicle}}</option>
-      </select>
-    </div>
-    <hr>
-  </div>
-  <div class="row" *ngIf="modeString === 'transit'">
-    <div class="col-sm-12">
-      <label for="vehicleTransit">Transit mode</label>
-      <select id="vehicleTransit" [(ngModel)]="vehicleString">
-        <option *ngFor="let vehicle of transitList; let i = index" [value]="vehicle">{{vehicle}}</option>
-      </select>
-    </div>
-  </div> -->
 
   <div class="row">
     <div class="col-sm-12">
