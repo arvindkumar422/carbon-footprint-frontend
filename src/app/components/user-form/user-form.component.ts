@@ -27,6 +27,8 @@ export class UserFormComponent implements OnInit {
   drivingList: string[];
   transitList: string[];
   displayVehicleDropdown: boolean;
+  seatTypeString: string;
+  seatTypes: string[];
 
   constructor(private dataService: DataService,
     private geocodeService: GeocodeService,
@@ -37,6 +39,7 @@ export class UserFormComponent implements OnInit {
     this.destination = dataService.getDestination();
     this.drivingList = ["car (diesel)", "car (petrol)", "car (electric)", "motorcycle", "lorry"];
     this.transitList = ["bus", "train"];
+    this.seatTypes = ['economy', 'premium economy', 'first class', 'business class'];
   }
 
   ngOnInit() {
@@ -82,23 +85,12 @@ export class UserFormComponent implements OnInit {
 
   computeCF() {
 
-    this.httpService.computeDistance(this.source, this.destination, this.modeString, this.vehicleString).subscribe(
+    this.httpService.computeEmissions(this.source, this.destination, this.modeString, this.vehicleString, this.seatTypeString).subscribe(
       (res: any) => {
         this.distance = res.distance;
         this.emissions = res.emissions;
       }
     );
-  }
-
-  getVehicles() {
-    //   switch(this.modeString){
-    //     case 'driving':  this.vehicleList =  ;
-    //     break;
-    //     case 'transit':  this.vehicleList = ;
-    //     break;
-    //     default: this.vehicleList = undefined;
-    //     break;
-    // }
   }
 
   modeChange() {
@@ -107,6 +99,9 @@ export class UserFormComponent implements OnInit {
     }
     else if(this.modeString === 'transit') {
       this.vehicleString = 'bus';
+    }
+    else if(this.modeString === 'flight'){
+      this.seatTypeString = 'economy';
     }
   }
 
@@ -117,6 +112,9 @@ export class UserFormComponent implements OnInit {
     }
     else if(this.modeString === 'transit') {
       this.vehicleString = 'bus';
+    }
+    else if(this.modeString === 'flight'){
+      this.seatTypeString = 'economy';
     }
   }
 
