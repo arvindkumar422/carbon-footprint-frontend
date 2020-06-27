@@ -1,4 +1,17 @@
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-direction [origin]="origin" [destination]="destination">
+<agm-map [latitude]="lat" [longitude]="lng" [fitBounds]="true">
+
+  <agm-direction *ngIf="flightMode === false" [origin]="origin" [destination]="destination">
   </agm-direction>
+
+  <div *ngIf="flightMode === true">
+    <agm-marker [agmFitBounds]="true" [latitude]="origin.lat" [longitude]="origin.lng"></agm-marker>
+    <agm-marker [agmFitBounds]="true" [latitude]="destination.lat" [longitude]="destination.lng"></agm-marker>
+    <agm-polyline [visible]="true">
+      <agm-polyline-point [latitude]="origin.lat" [longitude]="origin.lng">
+      </agm-polyline-point>
+      <agm-polyline-point [latitude]="destination.lat" [longitude]="destination.lng">
+      </agm-polyline-point>
+    </agm-polyline>
+  </div>
+
 </agm-map>

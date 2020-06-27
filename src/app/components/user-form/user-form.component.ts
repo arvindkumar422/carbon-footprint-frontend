@@ -6,6 +6,7 @@ import { FormControl } from '@angular/forms';
 import { MapsAPILoader } from '@agm/core';
 import { GeocodeService } from '../services/geocode.service';
 import { HttpService } from 'src/app/services/http.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-user-form',
@@ -40,6 +41,7 @@ export class UserFormComponent implements OnInit {
     this.drivingList = ["car (diesel)", "car (petrol)", "car (electric)", "motorcycle", "lorry"];
     this.transitList = ["bus", "train"];
     this.seatTypes = ['economy', 'premium economy', 'first class', 'business class'];
+
   }
 
   ngOnInit() {
@@ -116,6 +118,7 @@ export class UserFormComponent implements OnInit {
     else if(this.modeString === 'flight'){
       this.seatTypeString = 'economy';
     }
+    this.dataService.emitFlightMode(this.modeString === 'flight');
   }
 
 }

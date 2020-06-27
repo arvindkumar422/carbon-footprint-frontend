@@ -10,6 +10,7 @@ export class DataService {
 
   source = new Subject<Location>();
   destination = new Subject<Location>();
+  flightMode = new Subject<boolean>();
 
   constructor() { }
 
@@ -18,6 +19,10 @@ export class DataService {
   }
   getDestination(): Location {
     return new Location(42.360081, -71.058884);
+  }
+
+  emitFlightMode(mode: boolean) {
+    this.flightMode.next(mode);
   }
 
 }   

@@ -15,6 +15,8 @@ export class MapMainComponent implements OnInit {
   public origin: any;
   public destination: any;
 
+  flightMode: boolean = false;
+
   constructor(private dataService: DataService) {
     // this.origin = dataService.getS
     this.lat = this.dataService.getSource().latitude;
@@ -31,6 +33,11 @@ export class MapMainComponent implements OnInit {
     this.dataService.destination.subscribe(
       (destination: Location) => {
         this.destination = {lat: destination.latitude, lng: destination.longitude};
+      }
+    );
+    this.dataService.flightMode.subscribe(
+      (flightMode: boolean) => {
+        this.flightMode = flightMode;
       }
     );
   }
