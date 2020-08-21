@@ -8,7 +8,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class StatsDataComponent implements OnInit {
 
-  modeString: string = "methane";
+  modeString: string = "Methane";
   dailyStats: any[] = [0,0,0];
 
   constructor( private dataService: DataService ) { }
@@ -23,6 +23,7 @@ export class StatsDataComponent implements OnInit {
 
   onModeChange(event) {
     this.dataService.emitStatsMode(event.target.value);
+    this.modeString = event.target.value === "methane" ? "Methane" : "Carbon-Monoxide";
   }
 
 }

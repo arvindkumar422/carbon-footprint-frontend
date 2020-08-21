@@ -46,6 +46,19 @@
     overflow: hidden;
 }
 
+.titletext {
+    font-size: 1.2rem;
+}
+
+.desc {
+    font-size: 1rem;
+}
+
+.date {
+    position: absolute;
+    left: 0%;
+}
+
 .footer {
     height: 10%;
     overflow: hidden;

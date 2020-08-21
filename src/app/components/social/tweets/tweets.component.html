@@ -1,7 +1,7 @@
 <div class="heading">
-  <h4>
+  <h6>
     Live tweets - powered by Kafka and Elasticsearch
-  </h4>
+  </h6>
 </div>
 <div *ngFor="let tweet of tweets" class="tweet">
   <a [attr.href]="routeToTweet(tweet.id, tweet.user.id)" class="linkTweet">

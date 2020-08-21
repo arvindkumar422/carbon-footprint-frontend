@@ -38,4 +38,5 @@
 .tweet_text {
     height: 100%;
     overflow: hidden;
+    font-size: smaller;
 }
