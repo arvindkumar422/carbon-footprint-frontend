@@ -56,6 +56,13 @@ export class UserFormComponent implements OnInit {
   }
 
   searchSrcAddress() {
+    if(this.modeString === 'flight'){
+      this.httpService.getNearestAirports(this.source).subscribe(
+        result => {
+          console.log(result)
+        }
+      );
+    }
     this.geocodeService.geocodeAddress(this.srcAddress).subscribe(
       (result: Location) => {
         if (result.latitude === 0 && result.longitude === 0) {

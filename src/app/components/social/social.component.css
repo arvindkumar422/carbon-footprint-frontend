@@ -1,5 +1,5 @@
 .tweet {
-    max-width: 750px;
+    max-width: 90%;
     padding: 3vh;
     background: #cdbae1;
     margin-left: 5vh;
@@ -25,4 +25,8 @@
 .tweet-section {
     max-height: 89vh;
     overflow-y: scroll;
+}
+
+.social-row {
+    margin-right: 0px !important;
 }

@@ -23,6 +23,7 @@
     "@angular/router": "~7.2.0",
     "@ng-bootstrap/ng-bootstrap": "^4.2.2",
     "@ng-bootstrap/schematics": "^2.0.0-alpha.1",
+    "@swimlane/ngx-charts": "12.1.0 ",
     "@types/googlemaps": "^3.39.6",
     "agm-direction": "^0.7.9",
     "bootstrap": "^4.5.0",

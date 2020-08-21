@@ -22,4 +22,12 @@ export class HttpService {
     return this.httpClient.get('http://localhost:3000/getTweets');
   }
 
+  getTodayEmissionData() {
+    return this.httpClient.get('https://api.carbonintensity.org.uk/intensity/date');
+  }
+
+  getNearestAirports(source: Location) {
+    return this.httpClient.get('http://localhost:3000/getAirportList');
+  }
+
 }

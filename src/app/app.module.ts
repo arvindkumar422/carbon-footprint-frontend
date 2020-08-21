@@ -16,6 +16,11 @@ import { SocialComponent } from './components/social/social.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { StatsComponent } from './components/stats/stats.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { UkNationalGridComponent } from './components/stats/uk-national-grid/uk-national-grid.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     UserFormComponent,
     HomeComponent,
     SocialComponent,
-    NavbarComponent
+    NavbarComponent,
+    StatsComponent,
+    UkNationalGridComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +43,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AgmDirectionModule,
     AppRoutingModule,
     FormsModule,
+    NgxChartsModule,
+    BrowserAnimationsModule,
     NgbModule.forRoot()
   ],
   providers: [DataService],
