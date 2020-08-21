@@ -24,9 +24,9 @@ export class StatsLiveComponent implements OnInit {
   gradient = false;
   showLegend = true;
   showXAxisLabel = true;
-  xAxisLabel = 'Country';
+  xAxisLabel = 'Dates';
   showYAxisLabel = true;
-  yAxisLabel = 'Sales';
+  yAxisLabel = 'Level';
   timeline = true;
 
   colorScheme = {
