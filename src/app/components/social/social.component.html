@@ -1,23 +1,26 @@
-<div class="row social-row">
-  <div class="col-md-5">
-
-  </div>
-  <div class="col-md-7 tweet-section">
-    <div *ngFor="let tweet of tweets" class="tweet">
-      <a [attr.href]="routeToTweet(tweet.id, tweet.user.id)" class="linkTweet">
-        <div class="row">
-          <div class="col-md-2" class="tweet-name">
-            <img [src]="tweet.user.dp">
-          </div>
-          <div class="col-md-10">
-            <a [attr.href]="tweet.user.screen_name">{{ tweet.user.name }}</a>
-            : {{ tweet.text }}
-          </div>
+<div class="container-fluid">
+  <div class="row social-row">
+    <div class="col-md-7 news-section">
+      <app-news></app-news>
+    </div>
+    <div class="col-md-5 right-section">
+      <div class="tweet-section">
+        <app-tweets></app-tweets>
+      </div>
+      <div class="row heading">
+        <h4>
+          Emission stats
+        </h4>
+      </div>
+      <div class="row">
+        <div class="stats-section col-sm-9">
+          <app-stats-live class="statsdata"></app-stats-live>
         </div>
-      </a>
-  
+        <div class="col-sm-3">
+          <app-stats-data></app-stats-data>
+        </div>
+      </div>
+
     </div>
   </div>
-  
-
 </div>

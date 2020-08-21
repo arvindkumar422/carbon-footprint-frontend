@@ -1,32 +1,48 @@
-.tweet {
-    max-width: 90%;
-    padding: 3vh;
-    background: #cdbae1;
-    margin-left: 5vh;
-    margin-right: 5vh;
-    margin-top: 3vh;
-    margin-bottom: 3vh;
-    font-family: cursive;
-    border-radius: 3vh;
-    height: 10vh;
-    cursor: pointer;
-}
 
-.tweet-name {
-    overflow: hidden;
-}
-
-.linkTweet {
-    color: #20285c;
-    text-decoration: none;
-    background-color: transparent;
-}
 
 .tweet-section {
-    max-height: 89vh;
+    height: 60vh;
     overflow-y: scroll;
+    background-color: #676e92;
 }
 
-.social-row {
-    margin-right: 0px !important;
+.news-section {
+    /* background-color: #676e92; */
+    max-height: 94vh;
+    overflow-y: scroll;
+} 
+
+.heading {
+    text-align: center;
+    color: #cbff97;
+    justify-content: center;
+    margin-top: 1vh;
+}
+
+.stats-section {
+    height: 30vh;
+}
+
+.statsdata {
+    height: inherit;
+}
+
+.right-section {
+    max-height: 94vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.news-section::-webkit-scrollbar {
+    display: none;
+}
+
+.right-section::-webkit-scrollbar {
+    display: none;
+}
+
+.news-section {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }

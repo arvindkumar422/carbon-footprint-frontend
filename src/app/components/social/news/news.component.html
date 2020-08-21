@@ -1,0 +1,30 @@
+<div *ngFor="let item of news" class="news">
+  <a [attr.href]="item.url" class="linkNews">
+    <div class="row news-row">
+      <div class="col-md-4 news-name">
+        <img class="news-img" [src]="item.urlToImage">
+      </div>
+      <div class="col-md-8" style="height: 100%;">
+        <div class="row title">
+          <h3>
+            {{ item.title }}
+          </h3>
+        </div>
+        <div class="row body">
+          <h5>
+            {{ item.description }}
+          </h5>
+        </div>
+        <div class="row footer">
+          <h5>
+            {{ item.publishedAt }}
+          </h5>
+          <h5 class="source">
+            {{ item.source }}
+          </h5>
+
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

@@ -1,0 +1,57 @@
+.news {
+    max-width: 100%;
+    padding: 3vh;
+    background: #eceff9;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+
+    border-radius: 3vh;
+    height: 30vh;
+    cursor: pointer;
+}
+
+.news-name {
+    height: 100%;
+}
+
+.news-img {
+    height: inherit;
+    width: inherit;
+}
+
+.news-row {
+    height: 100%;
+}
+
+
+.linkNews {
+    color: #20285c;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-variant: small-caps;
+    height: 40%;
+    color: black;
+    overflow: hidden;
+}
+
+.body {
+    font-family: auto;
+    height: 50%;
+    overflow: hidden;
+}
+
+.footer {
+    height: 10%;
+    overflow: hidden;
+}
+
+.source {
+    position: absolute;
+    right: 5%;
+}

@@ -1,19 +1,24 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" routerLink="/home">Carbud</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/social">Social</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/stats">Stats</a>
-      </li>
-    </ul>
-  </div>
+    <a class="navbar-brand" routerLink="/home">Carbud</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+            true}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/social" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+            true}">Current</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/stats" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+            true}">Stats</a>
+        </li> -->
+      </ul>
+    </div>
+
 </nav>

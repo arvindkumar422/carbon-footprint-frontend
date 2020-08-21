@@ -1,0 +1,19 @@
+<div class="heading">
+  <h4>
+    Live tweets - powered by Kafka and Elasticsearch
+  </h4>
+</div>
+<div *ngFor="let tweet of tweets" class="tweet">
+  <a [attr.href]="routeToTweet(tweet.id, tweet.user.id)" class="linkTweet">
+    <div class="row tweet_row">
+      <div class="col-md-2 tweet-name">
+        <img [src]="tweet.user.dp" class="dp">
+      </div>
+      <div class="col-md-10 tweet_text">
+        <a [attr.href]="tweet.user.screen_name">{{ tweet.user.name }}</a>
+        : {{ tweet.text }}
+      </div>
+    </div>
+  </a>
+
+</div>

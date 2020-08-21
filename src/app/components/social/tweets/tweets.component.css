@@ -1,0 +1,41 @@
+.tweet {
+    padding: 2vh;
+    background: #e8ead4;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    border-radius: 1vh;
+    margin-bottom: 3vh;
+    font-family: cursive;
+    /* border-radius: 3vh; */
+    height: 13vh;
+    cursor: pointer;
+}
+
+.heading {
+    text-align: center;
+    color: ivory;
+}
+
+.tweet-name {
+    overflow: hidden;
+}
+
+.tweet_row {
+    height: 100%;
+}
+
+.dp {
+    height: -webkit-fill-available;
+    border-radius: 35%;
+}
+
+.linkTweet {
+    color: #20285c;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.tweet_text {
+    height: 100%;
+    overflow: hidden;
+}

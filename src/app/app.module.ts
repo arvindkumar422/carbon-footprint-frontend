@@ -21,6 +21,10 @@ import { StatsComponent } from './components/stats/stats.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { UkNationalGridComponent } from './components/stats/uk-national-grid/uk-national-grid.component';
+import { TweetsComponent } from './components/social/tweets/tweets.component';
+import { NewsComponent } from './components/social/news/news.component';
+import { StatsLiveComponent } from './components/social/stats-live/stats-live.component';
+import { StatsDataComponent } from './components/social/stats-data/stats-data.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { UkNationalGridComponent } from './components/stats/uk-national-grid/uk-
     SocialComponent,
     NavbarComponent,
     StatsComponent,
-    UkNationalGridComponent
+    UkNationalGridComponent,
+    TweetsComponent,
+    NewsComponent,
+    StatsLiveComponent,
+    StatsDataComponent
   ],
   imports: [
     BrowserModule,

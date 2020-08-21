@@ -1,0 +1,47 @@
+<div id="mode" class="btn-group col-md-6" ngbDropdown role="group" aria-label="Button group for mode">
+  <button class="btn btn-outline-warning" ngbDropdownToggle>{{modeString}}</button>
+  <div class="dropdown-menu" ngbDropdownMenu>
+    <button ngbDropdownItem value="methane" (click)="onModeChange($event)">Methane</button>
+    <button ngbDropdownItem value="carbonmonoxide" (click)="onModeChange($event)">Carbon-Monoxide</button>
+  </div>
+</div>
+<div>
+  <div class="row today">
+    <div class="col-sm-12">
+      <h5>
+        Today's stats
+      </h5>
+    </div>
+
+    <div class="col-sm-5">
+      <h6>
+        Min :
+      </h6>
+    </div>
+    <div class="col-sm-7">
+      <h6>
+        {{ dailyStats[0].toFixed(4) }}
+      </h6>
+    </div>
+    <div class="col-sm-5">
+      <h6>
+        Max :
+      </h6>
+    </div>
+    <div class="col-sm-7">
+      <h6>
+        {{ dailyStats[1].toFixed(4) }}
+      </h6>
+    </div>
+    <div class="col-sm-5">
+      <h6>
+        Avg :
+      </h6>
+    </div>
+    <div class="col-sm-7">
+      <h6>
+        {{ dailyStats[2].toFixed(4) }}
+      </h6>
+    </div>
+  </div>
+</div>
