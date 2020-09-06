@@ -68,3 +68,30 @@
     position: absolute;
     right: 5%;
 }
+
+@media only screen and (max-width: 768px) {
+    .source {
+        position: relative;
+        right: 5%;
+    }
+    /* For mobile phones: */
+    .news-img  {
+      width: 100%;
+      height: 100%;
+    }
+    .titletext {
+        width:100%;
+        font-size: 0.5rem;
+    }
+    .news-name {
+        height: 80%;
+        font-size: 0.5rem;
+    }
+    .news {
+        padding-left: 3vh;
+        border: 3vh;
+        height: 40vh;
+        cursor: pointer;
+        overflow: scroll;
+    }
+  }

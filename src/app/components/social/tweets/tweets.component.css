@@ -40,3 +40,13 @@
     overflow: hidden;
     font-size: small;
 }
+
+@media only screen and (max-width: 768px){
+    .dp {
+        display: none;
+    }
+    .tweet {
+        height: 15vh;
+        overflow: auto;
+    }
+}
